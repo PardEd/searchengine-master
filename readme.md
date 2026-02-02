@@ -1,6 +1,5 @@
 # Поисковый движок: Итоговый проект курса
 ## Описание проекта
-
 Проект представляет собой разработку поискового движка, который позволяет осуществлять поиск информации в заданных источниках данных.
 
 Архитектура системы
@@ -38,9 +37,13 @@
 git clone https://github.com/PardEd/searchengine
 
 ## Настройка базы данных
-[application.yaml](src/main/resources/application.yaml#L5)
+[application.yaml](src/main/resources/application.yaml#L6)
 
     datasource:
         username: * имя пользователя для подключения базы данных
         password: * пароль для подключения к базе данных
+        
+[application.yaml](src/main/resources/application.yaml#L6)
 
+  liquibase:
+    drop-first: true // данный параметр по умолчанию пересоздает базу данных при запуске приложения, альтернативное значение ***false*** сохранит ранее созданную базу данных
