@@ -26,6 +26,8 @@
 
     Jsoup для парсинга
     Библиотека Lucene Morphology для обработки текста
+    Lombok
+    Liquibase управления схемами и миграциями баз данных
     Spring Boot Starter
         -data-jpa
         -thymeleaf
@@ -45,5 +47,7 @@ git clone https://github.com/PardEd/searchengine
         
 [application.yaml](src/main/resources/application.yaml#L6)
 
-  liquibase:
-    drop-first: true // данный параметр по умолчанию пересоздает базу данных при запуске приложения, альтернативное значение ***false*** сохранит ранее созданную базу данных
+    liquibase:
+       drop-first: true 
+
+ данный параметр по умолчанию пересоздает базу данных при запуске приложения, альтернативное значение ***false*** сохранит ранее созданную базу данных
