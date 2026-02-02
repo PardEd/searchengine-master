@@ -45,7 +45,7 @@ git clone https://github.com/PardEd/searchengine
         username: * имя пользователя для подключения базы данных
         password: * пароль для подключения к базе данных
         
-[application.yaml](src/main/resources/application.yaml#L6)
+[application.yaml](src/main/resources/application.yaml#L20)
 
     liquibase:
        drop-first: true 
