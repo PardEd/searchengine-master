@@ -1,0 +1,67 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: skillbox
+    url: jdbc:mysql://localhost:3306/search_engine?useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+  jpa:
+    show-sql: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+    drop-first: true
+  output:
+    ansi:
+      enabled: ALWAYS
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+    fallback-to-system-locale: true
+  retry:
+    maxAttempts: 3
+    initialInterval: 2000
+    multiplier: 1.5
+    maxInterval: 60000
+  backOffPolicy:
+    setBackOffPeriod: 2000
+    setMultiplier: 1.5
+    setMaxInterval: 60000
+  fixedBackOff:
+    setBackOffPeriod: 2000
+
+indexing-settings:
+  sites:
+#  - url: http://skillbox.ru/
+#    name: skillbox.ru
+  - url: http://www.playback.ru/
+    name: playback.ru
+  - url: https://volochek.life/
+    name: volochek.life
+  - url: http://radiomv.ru/
+    name: radiomv.ru
+  #- url: https://ipfran.ru/
+  #  name: ipfran.ru
+  #- url: https://dimonvideo.ru/
+  #  name: dimonvideo.ru
+  #- url: https://nikoartgallery.com/
+  #  name: nikoartgallery.com
+#  - url: https://et-cetera.ru/mobile/
+#    name: et-cetera.ru
+#  - url: https://www.lutherancathedral.ru/
+#    name: lutherancathedral
+#  - url: https://dombulgakova.ru/
+#    name: dombulgakova
+#  - url: https://www.svetlovka.ru/
+#    name: svetlovka
+  datasource:
+    user-agent: Mozilla/5.0 (compatible; LightSearchBot/1.2; +http://www.google.com/bot.html)
+    referrer: http://www.google.com
+    timeout: 500
