@@ -1,0 +1,22 @@
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+          <PatternLayout>
+            <Pattern>
+              %highlight{%d{HH:mm:ss.SSS}
+              %magenta([%t])
+              %red(%-5level{ERROR})
+              %yellow(%-5level{WARN})
+              %green(%-5level{INFO})
+              %blue(%logger{36})
+              - %msg%n}
+            </Pattern>
+          </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" level="info"/>
+        </Root>
+    </Loggers>
+</Configuration>
